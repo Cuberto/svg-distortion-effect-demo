@@ -1,0 +1,33 @@
+{
+	"name": "cuberto-svg-distortion-effect-demo",
+	"version": "1.0.0",
+	"author": "Cuberto (cuberto.com)",
+	"contributors": [],
+	"dependencies": {
+		"gsap": "^3.7.1"
+	},
+	"browserslist": [
+		"since 2010",
+		"last 2 versions"
+	],
+	"devDependencies": {
+		"@babel/core": "^7.9.0",
+		"@babel/plugin-transform-runtime": "^7.9.0",
+		"@babel/preset-env": "^7.9.0",
+		"@babel/runtime": "^7.9.2",
+		"@babel/runtime-corejs3": "^7.9.2",
+		"babel-loader": "^8.1.0",
+		"browser-sync": "^2.26.7",
+		"core-js": "^2.6.11",
+		"del": "^5.1.0",
+		"fast-async": "^6.3.8",
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^7.0.1",
+		"gulp-load-plugins": "^2.0.3",
+		"gulp-pug": "^4.0.1",
+		"gulp-plumber": "^1.2.1",
+		"gulp-sass": "^4.1.0",
+		"imports-loader": "^0.8.0",
+		"webpack-stream": "^5.2.1"
+	}
+}

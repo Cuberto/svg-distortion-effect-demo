@@ -1,0 +1,96 @@
+// Document
+html {
+    height:100%;
+}
+
+body {
+    height:100%;
+    margin:0;
+    padding:0;
+
+    background:$color-bg;
+    color:$color-text;
+
+    font-family:$font-family;
+    font-size:$font-size;
+    letter-spacing:$letter-spacing;
+    line-height:$line-height;
+    text-align:left;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+* {
+    box-sizing:border-box;
+
+    &:before, &:after {
+        box-sizing:border-box;
+    }
+
+    &:focus {
+        outline:none !important;
+    }
+
+    &::selection {
+        color:$color-base;
+        background:$color-graybase;
+    }
+}
+
+// Links
+a {
+    color:$color-link;
+    cursor:pointer;
+    text-decoration:underline;
+
+    &:hover, &:focus {
+        color:$color-link-hover;
+        text-decoration:none;
+    }
+}
+
+a, button, label, input {
+    -webkit-tap-highlight-color:transparent;
+}
+
+// Media
+img, svg, canvas, audio, video, iframe {
+    vertical-align:middle;
+}
+
+figure {
+    margin:0;
+}
+
+// Inputs
+input, button, select, textarea {
+    font-family:inherit;
+    font-size:inherit;
+    line-height:inherit;
+}
+
+// Buttons
+button, [type="button"], [type="reset"], [type="submit"] {
+    &:not(:disabled) {
+        cursor:pointer;
+    }
+}
+
+// Text
+p, h1, h2, h3, h4, h5, h6, blockquote {
+    margin:0;
+    padding:0;
+}
+
+em {
+    font-style:normal;
+}
+
+// View
+.cb-layout {
+    height:100%;
+}
+
+.cb-content {
+    height:100%;
+}

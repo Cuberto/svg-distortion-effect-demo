@@ -1,0 +1,76 @@
+.cb-outro {
+    $root:&;
+
+    margin:-2px 0 0 0;
+
+    color:$color-base;
+    background:$color-graybase;
+
+    &-content {
+        padding:80px 0;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+    }
+
+    &-container {
+        flex:1;
+        width:100%;
+        padding:0 40px;
+
+        @media (min-width:$screen-md-min) {
+            padding:0 120px;
+        }
+
+        @media (min-width:$screen-lg-min) {
+            padding:0 180px;
+        }
+    }
+
+    &-header {
+        h2 {
+            font-size:20px;
+            font-weight:bold;
+            line-height:120%;
+
+            @media (min-width:$screen-md-min) {
+                font-size:40px;
+            }
+
+            @media (min-width:$screen-lg-min) {
+                font-size:60px;
+            }
+        }
+    }
+
+    &-list {
+        margin:40px 0 0 0;
+
+        &-item {
+            display:block;
+            padding:5px 0;
+
+            font-size:16px;
+            font-weight:normal;
+            line-height:150%;
+
+            @media (min-width:$screen-md-min) {
+                font-size:18px;
+            }
+
+            @media (min-width:$screen-lg-min) {
+                font-size:21px;
+            }
+
+            a {
+                opacity:0.5;
+                text-decoration:none;
+
+                &:hover {
+                    opacity:1;
+                }
+            }
+        }
+    }
+}

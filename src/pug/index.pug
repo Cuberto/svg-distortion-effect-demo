@@ -1,0 +1,47 @@
+extends /_includes/layout
+
+block title
+    title Cuberto Making SVG Distortion Effect
+
+block content
+
+    svg(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 463 463', style="position:absolute;top:-1px;left:-1px;height:0;width:0;")#svg-distortion
+        defs
+            filter#svg-distortion-filter
+                feTurbulence(type='fractalNoise' baseFrequency='0.01 0.003' stitchTiles="noStitch" numOctaves='1' seed='2' result='warp')
+                feDisplacementMap(xChannelSelector='R' yChannelSelector='G' scale='1' in='SourceGraphic' in2='warp')
+
+    .cb-layout#view-main
+        .cb-content
+
+            section.cb-demo
+                .cb-demo-bgs
+                    .cb-demo-bg.-v1.-active
+                    .cb-demo-bg.-v2
+                    .cb-demo-bg.-v3
+                .cb-demo-content
+                    .cb-demo-container
+                        .cb-demo-grid
+                            .cb-demo-col.-left
+                                .cb-demo-figures(style="filter:url(#svg-distortion-filter)")
+                                    .cb-demo-figure.-active
+                                        // You also can use images
+                                        video(src="https://media.giphy.com/media/xTiTntp4GtRdey7GH6/giphy.mp4?cid=790b761169955b0690b656b020d1091896781979d902f167&rid=giphy.mp4&ct=g", autoplay, playsinline, muted, loop)
+                                    .cb-demo-figure
+                                        video(src="https://media.giphy.com/media/l1J9yP3Svuk0Xa6v6/giphy.mp4?cid=790b7611ac6570c64c378ee4f585004d75860108452a6427&rid=giphy.mp4&ct=g", autoplay, playsinline, muted, loop)
+                                    .cb-demo-figure
+                                        video(src="https://media.giphy.com/media/l0HlCxHqQRmGQbSes/giphy.mp4?cid=790b761190e9bf855149856beb6822f1eb425375e6b9d0a5&rid=giphy.mp4&ct=g", autoplay, playsinline, muted, loop)
+                            .cb-demo-col.-right
+                                .cb-demo-navs
+                                    .cb-demo-nav.-active: span Fast and super lightweight 🚀
+                                    .cb-demo-nav: span Easy to use 💡 and understand
+                                    .cb-demo-nav: span It looks nice 💎 awesome and clean
+
+            section.cb-outro
+                .cb-outro-content
+                    .cb-outro-container
+                        .cb-outro-header
+                            h2 Credits
+                        .cb-outro-list
+                            .cb-outro-list-item: a(href="//cuberto.com/", target="_blank") Cuberto
+                            .cb-outro-list-item: a(href="//greensock.com/gsap/", target="_blank") GreenSock GSAP

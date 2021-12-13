@@ -1,0 +1,44 @@
+/* Main Colors */
+$color-base:#fff;
+$color-graybase:#000;
+
+$color-primary:#4e4d8f;
+$color-secondary:#00092b;
+
+$color-smooth:#6F6F6F;
+$color-fill:#EEEEEE;
+
+$color-bg:$color-base;
+$color-text:#000;
+$color-link:inherit;
+$color-link-hover:inherit;
+
+/* Fonts */
+$font-family:"Montserrat", sans-serif;
+$font-size:14px;
+$font-weight:normal;
+$letter-spacing:normal;
+$line-height:normal;
+
+/* Screen sizes */
+$screen-xs:360px;
+$screen-sm:768px;
+$screen-md:1024px;
+$screen-lg:1200px;
+$screen-ml:1350px;
+$screen-xl:1600px;
+$screen-ul:1900px;
+
+$screen-xs-min:$screen-xs;
+$screen-xs-max:($screen-sm - 1);
+$screen-sm-min:$screen-sm;
+$screen-sm-max:($screen-md - 1);
+$screen-md-min:$screen-md;
+$screen-md-max:($screen-lg - 1);
+$screen-lg-min:$screen-lg;
+$screen-lg-max:($screen-ml - 1);
+$screen-ml-min:$screen-ml;
+$screen-ml-max:($screen-xl - 1);
+$screen-xl-min:$screen-xl;
+$screen-xl-max:($screen-ul - 1);
+$screen-ul-min:$screen-ul;

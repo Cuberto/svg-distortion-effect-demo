@@ -2,13 +2,11 @@ const webpack = require('webpack');
 
 const webpackConfig = {
     entry: "./src/js/index.js",
-
     output: {
         path: __dirname,
         filename: "bundle.js",
         publicPath: "/assets/js/"
     },
-
     module: {
         rules: [
             {
@@ -25,11 +23,9 @@ const webpackConfig = {
             }
         ]
     },
-
     resolve: {
         modules: ['./src/js', 'node_modules']
     },
-
     plugins: [
         new webpack.ProvidePlugin({
             $: "jquery",
@@ -37,7 +33,6 @@ const webpackConfig = {
             "window.jQuery": "jquery"
         })
     ],
-
     mode: "development",
     devtool: "source-map"
 };

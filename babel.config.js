@@ -1,7 +1,8 @@
 const presets = [
     [
-        "@babel/env",
+        "@babel/preset-env",
         {
+            "loose": true,
             "exclude": ["transform-async-to-generator", "transform-regenerator"]
         }
     ]

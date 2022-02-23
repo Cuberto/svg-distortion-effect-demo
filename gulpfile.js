@@ -11,6 +11,7 @@ const gulp = require('gulp');
 const browserSync = require('browser-sync');
 const $ = require('gulp-load-plugins')({pattern: ['gulp-*', 'gulp.*', 'del']});
 const webpack = require('webpack-stream');
+const sass = require('gulp-sass')(require('sass'));
 
 /* Primary tasks */
 gulp.task('default', (done) => {
@@ -37,7 +38,7 @@ gulp.task('pug', () => {
 /* Sass task */
 gulp.task('sass', () => {
     return gulp.src('./src/scss/main.scss')
-        .pipe($.sass({
+        .pipe(sass({
             "includePaths": "node_modules"
         }))
         .pipe($.autoprefixer())

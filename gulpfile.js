@@ -1,15 +1,20 @@
 /*!
  * Gulp SMPL Layout Builder
  *
- * @version 7.3.1 (lite)
+ * @version 8.3.3 (lite)
  * @author Artem Dordzhiev (Draft) | Cuberto
  * @type Module gulp
+ * @license The MIT License (MIT)
  */
 
 /* Get plugins */
 const gulp = require('gulp');
 const browserSync = require('browser-sync');
-const $ = require('gulp-load-plugins')({pattern: ['gulp-*', 'gulp.*', 'del']});
+const plumber = require('gulp-plumber');
+const pug = require('gulp-pug');
+const sass = require('gulp-sass')(require('sass'));
+const autoprefixer = require('gulp-autoprefixer');
+const del = require('del');
 const webpack = require('webpack-stream');
 
 /* Primary tasks */
@@ -24,8 +29,8 @@ gulp.task('serve', (done) => {
 /* Pug task */
 gulp.task('pug', () => {
     return gulp.src(['./src/pug/**/*.pug', '!./src/pug/_includes/**/*'])
-        .pipe($.plumber())
-        .pipe($.pug({
+        .pipe(plumber())
+        .pipe(pug({
             pretty: true,
             basedir: "./src/pug/"
         }))
@@ -37,15 +42,15 @@ gulp.task('pug', () => {
 /* Sass task */
 gulp.task('sass', () => {
     return gulp.src('./src/scss/main.scss')
-        .pipe($.sass({
+        .pipe(sass({
             "includePaths": "node_modules"
         }))
-        .pipe($.autoprefixer())
+        .pipe(autoprefixer())
         .pipe(gulp.dest('./tmp/assets/css/'))
         .pipe(browserSync.stream({match: '**/*.css'}));
 });
 
-/* JS task */
+/* JS (webpack) task */
 gulp.task('js', () => {
     return gulp.src(['./src/js/**/*'])
         .pipe(webpack(require('./webpack.config.js')))
@@ -80,5 +85,5 @@ gulp.task('watch', () => {
 
 /* FS tasks */
 gulp.task('clean', () => {
-    return $.del(['./tmp/**/*'], {dot: true});
+    return del(['./tmp/**/*'], {dot: true});
 });
